@@ -1,0 +1,21 @@
+<% @page_title = "#{@admin_user.name}" %>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Edit Admin User</h1>
+    </div> <!-- /.col-lg-12 -->
+</div> <!-- /.row -->
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+	        <div class="panel-heading">
+	            Revise details to update
+	        </div>
+	        <div class="panel-body">
+	        	<%= form_for(@admin_user) do |f| %>
+	        		<%= render(:partial => 'form', :locals => {:f => f}) %>
+	        	<% end %>
+	        </div> <!-- /.panel-body -->
+		</div> <!-- /.panel -->
+	</div> <!-- /.col-lg-12 -->
+</div> <!-- /.row -->
