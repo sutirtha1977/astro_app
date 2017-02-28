@@ -43,6 +43,11 @@
                   <% end %>  
                   <%= link_to(delete_listing_path(listing,:product_id => @product.id), :class => "btn btn-danger btn-circle") do %>
                       <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> 
+                  <% end %> 
+                  <% if listing.visible %>
+                    <i class="fa fa-eye fa-lg" aria-hidden="true"></i>
+                  <% else %>
+                    <i class="fa fa-eye-slash fa-lg" aria-hidden="true"></i>
                   <% end %>    
                 </p>
                 </div>
