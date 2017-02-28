@@ -2,7 +2,11 @@ class ListingsController < ApplicationController
   layout 'admin'
 
   before_action :confirm_logged_in
-  before_action :find_product
+  before_action :find_product , :except => [:all]
+
+  def all
+    @listing_all = Listing.sorted
+  end
 
   def index
     @listings = @product.listings.sorted
