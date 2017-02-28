@@ -1,53 +1,56 @@
 <% @page_title = "Show All Listings" %>
-<% @page_desc = "This area is to show all listings" %>
 
-<div class="container">
-  <div class="row">
-    <div class="panel panel-default panel-table">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col col-xs-6">
-            <%= link_to("Back to Sub Categories", 
-                sections_path(:category_id => @section.category.id), 
-                :class => 'btn btn-square-toround btn-bordered-primary btn-sm') %>
-          </div>
-          <div class="col col-xs-6 text-right">
-            <%= link_to 'Add New Listing', 
-                new_listing_path(:section_id => @section.id), 
-                class: "btn btn-square-toround btn-bordered-primary btn-sm" %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% if(@listings.count > 0) %>
-
-      <% @listings.each do |listing| %>
-        <div class="span3">
-          <div class="well">
-            <p class="text-right">
-              <%= link_to("", edit_listing_path(listing, :section_id => @section.id), 
-                :class => "btn btn-default btn-sm fa fa-pencil",
-                :title => "Edit") %>
-              <%= link_to("", delete_listing_path(listing, :section_id => @section.id), 
-                :class => "btn btn-danger btn-sm fa fa-trash",
-                :title => "Delete") %>
-              <% if listing.visible %>
-                <i class="fa fa-bullseye fa-lg text-danger" aria-hidden="true"></i>
-              <% end %>
-            </p>
-            <h2 class="text-warning text-center"><%= listing.name %></h2>
-            <h3 class="text-warning text-center"><%= @section.name %></h3>     
-            <p><%= listing.description %></p>
-            <p class="text-center"><%= link_to image_tag(listing.image.url), listing %></p>
-            <hr>
-            <h3 class="text-center"><%= number_to_currency(listing.price, 
-                :precision => 2,
-                :unit => "INR", :format => "%u %n") %></h3>
-          </div>
-        </div>
-      <% end %>
-
-    <% end %>
+<div class="row">
+  <div class="col-lg-12">
+      <h2 class="page-header">View All Listings</h2>
   </div>
-</div>
+</div> <!-- /.col-lg-12 -->
 
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= link_to 'Add New Listing', 
+            new_listing_path(:product_id => @product.id), 
+            class: "btn btn-square-toround btn-bordered-success btn-md" %>         
+      </div>
+      <!-- .panel-heading -->
+      <div class="panel-body">
+        <% @listings.each.with_index do |listing, index| %>
+        <div class="panel-group" id="accordion-list">
+          <div class="panel panel-green">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion-list" href="#collapse_<%= listing.id %>"><%= listing.name %></a>
+                </h4>
+            </div>
+            <% if index === 0 %>
+              <div id="collapse_<%= listing.id %>" class="panel-collapse collapse in">
+            <% else %>
+              <div id="collapse_<%= listing.id %>" class="panel-collapse collapse">
+            <% end %>            
+                <div class="panel-body">
+                  <h4><%= @product.name %></h4> 
+                  <p><%= listing.short_desc %></p>  
+                  <p><%= listing.long_desc %></p>  
+                  <h3 class="text-center"><%= number_to_currency(listing.orig_price, 
+                      :unit => "INR", :format => "%u %n") %></h3>
+                  <h3 class="text-center"><%= number_to_currency(listing.curr_price, 
+                      :unit => "INR", :format => "%u %n") %></h3>
+                <p class="pull-right">
+                  <%= link_to(edit_listing_path(listing, :product_id => @product.id), :class => "btn btn-success btn-circle") do %>
+                      <i class="fa fa-edit fa-fw" aria-hidden="true"></i> 
+                  <% end %>  
+                  <%= link_to(delete_listing_path(listing,:product_id => @product.id), :class => "btn btn-danger btn-circle") do %>
+                      <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> 
+                  <% end %>    
+                </p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div> <!-- .panel-body -->
+    </div> <!-- /.panel -->
+  </div> <!-- /.col-lg-12 -->
+</div>

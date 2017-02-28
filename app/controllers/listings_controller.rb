@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
   before_action :find_product
 
   def index
-    @listings = @section.listings.sorted
+    @listings = @product.listings.sorted
   end
 
   def show
@@ -19,7 +19,7 @@ class ListingsController < ApplicationController
   def create
     # Instantiate a new object using form parameters
     @listing = Listing.new(listing_params)
-    @listing.section = @section
+    @listing.product = @product
     # Save the object
     if @listing.save
       # If save succeeds, redirect to the index action

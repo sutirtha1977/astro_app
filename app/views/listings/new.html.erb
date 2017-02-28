@@ -1,10 +1,23 @@
 <% @page_title = "Create Listings" %>
-<% @page_desc = "This area is to create a listing" %>
 
-<div class="container">
-	<%= form_for(@listing, 
-		:url => listings_path(:section_id => @section.id), 
-		html: {:multipart => true , :class => 'form-horizontal'}) do |f| %>
-	    <%= render(:partial => 'form', :locals => {:f => f}) %>
-	<% end %>
-</div>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Add Listing</h1>
+    </div> <!-- /.col-lg-12 -->
+</div> <!-- /.row -->
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+	        <div class="panel-heading">
+	            Fill in the Details to Submit
+	        </div>
+	        <div class="panel-body">
+				<%= form_for(@listing, 
+					:url => listings_path(:product_id => @product.id)) do |f| %>
+				    <%= render(:partial => 'form', :locals => {:f => f}) %>
+				<% end %>
+	        </div> <!-- /.panel-body -->
+		</div> <!-- /.panel -->
+	</div> <!-- /.col-lg-12 -->
+</div> <!-- /.row -->
+

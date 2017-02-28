@@ -9,7 +9,7 @@ $(function() {
     }, function() {
         $('.dropdown-menu', this).fadeOut('fast');
     });//hover
-
+    
     //dataTables-product responsive
     $(document).ready(function() {
         $('#dataTables-product').DataTable({
