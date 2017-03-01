@@ -4,6 +4,9 @@
     <td><%= mail_to(team.email) %></td>
     <td><%= team.description %></td>
     <td class="text-center">
+        <%= link_to(team_path(team), :remote => true, :class => "btn btn-info btn-circle") do %>
+            <i class="fa fa-flag fa-fw" aria-hidden="true"></i> 
+        <% end %>  
         <%= link_to(edit_team_path(team), :remote => true, :class => "btn btn-success btn-circle") do %>
             <i class="fa fa-edit fa-fw" aria-hidden="true"></i> 
         <% end %>  

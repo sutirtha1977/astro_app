@@ -1,0 +1,9 @@
+$("ul.errors").html("")
+<% if @admin_user.errors.any? %>
+  <% @admin_user.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $(".admin-index").html("<%= escape_javascript(render 'index') %>")
+  $("#admin-modal").modal("hide")
+<% end %>

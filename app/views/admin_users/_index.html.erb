@@ -1,0 +1,19 @@
+<% @admin_users.each do |admin| %>
+<tr>
+    <td><%= admin.name %></td>
+    <td><%= mail_to(admin.email) %></td>
+    <td><%= admin.username %></td>
+    <td class="text-center">
+        <% if (session[:username] != admin.username) %>
+            <%= link_to(edit_admin_user_path(admin), :remote => true, :class => "btn btn-success btn-circle") do %>
+                <i class="fa fa-edit fa-fw" aria-hidden="true"></i> 
+            <% end %>  
+            <%= link_to(delete_admin_user_path(admin), :remote => true,:class => "btn btn-danger btn-circle") do %>
+                <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> 
+            <% end %> 
+        <% else %>
+            Logged in! 
+        <% end %>    
+    </td>
+</tr>
+<% end %>
