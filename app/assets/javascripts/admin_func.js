@@ -11,7 +11,7 @@ $(function() {
     });//hover
     
     //dataTables-product responsive
-    $(document).ready(function() {
+    $(document).on('turbolinks:load', function() {
         $('#dataTables-product').DataTable({
             responsive: true,
             "columns": [
@@ -24,8 +24,8 @@ $(function() {
         });
     });
 
-    //dataTables-adminuser responsive
-    $(document).ready(function() {
+    // dataTables-adminuser responsive
+    $(document).on('turbolinks:load', function() {
         $('#dataTables-adminuser').DataTable({
             responsive: true,
             "columns": [
@@ -36,7 +36,20 @@ $(function() {
             ]
         });
     });
-        
+
+    // dataTables-team responsive
+    $(document).on('turbolinks:load', function() {
+        $('#dataTables-team').DataTable({
+            responsive: true,
+            "columns": [
+                null,
+                null,
+                null,
+                { "orderable": false }
+            ]
+        });
+    });
+
     $(window).bind("load resize", function() {
         var topOffset = 50;
         var width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;

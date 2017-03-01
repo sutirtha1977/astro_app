@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'admin_users#index'
+  root 'access#menu'
 
   get 'admin', :to => 'access#menu'
   get 'access/menu'
