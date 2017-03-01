@@ -11,8 +11,8 @@ class CreateTeams < ActiveRecord::Migration[5.0]
       t.string	:state, limit: 25
       t.string	:country, limit: 25
       t.integer	:zip
-      t.integer :cell_phone
-      t.integer :home_phone
+      t.string :cell_phone
+      t.string :home_phone
       t.string	:social
       t.timestamps
     end

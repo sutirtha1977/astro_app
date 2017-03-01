@@ -1,8 +1,8 @@
 <% @teams.each do |team| %>
 <tr>
-    <td><%= team.name %></td>
+    <td><%= team.first_name %></td>
+    <td><%= team.last_name %></td>
     <td><%= mail_to(team.email) %></td>
-    <td><%= team.description %></td>
     <td class="text-center">
         <%= link_to(team_path(team), :remote => true, :class => "btn btn-info btn-circle") do %>
             <i class="fa fa-flag fa-fw" aria-hidden="true"></i> 

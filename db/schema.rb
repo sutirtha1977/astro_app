@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20170301031514) do
     t.string   "state",       limit: 25
     t.string   "country",     limit: 25
     t.integer  "zip"
-    t.integer  "cell_phone"
-    t.integer  "home_phone"
+    t.string   "cell_phone"
+    t.string   "home_phone"
     t.string   "social"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false

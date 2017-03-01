@@ -10,17 +10,8 @@ class Team < ApplicationRecord
 	        :format => EMAIL_REGEX,
 	        :confirmation => true
 	validates :description, :presence => true
-	validates :cell_phone, 
-					phone: { 
-					possible: true, 
-					allow_blank: true, 
-					types: [:toll_free, :mobile] }
-	validates :home_phone, 
-					phone: { 
-					possible: true, 
-					allow_blank: true, 
-					types: [:toll_free, :mobile] }
-	validates :zip, :numericality => true
+
+	# validates_numericality_of :zip
 
 	scope :sorted, lambda { order('last_name ASC, first_name ASC')}
 
