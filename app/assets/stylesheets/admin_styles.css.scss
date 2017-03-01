@@ -246,6 +246,22 @@ table.dataTable thead .sorting:after {
 .panel-green > a:hover {
   color: #3d8b3d;
 }
+
+.panel-blue {
+  border-color: #428bca;
+}
+.panel-blue > .panel-heading {
+  border-color: #428bca;
+  color: white;
+  background-color: #428bca;
+}
+.panel-blue > a {
+  color: #428bca;
+}
+.panel-blue > a:hover {
+  color: #3277b3;
+}
+
 .panel-red {
   border-color: #d9534f;
 }

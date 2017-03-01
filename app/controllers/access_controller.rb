@@ -6,6 +6,7 @@ class AccessController < ApplicationController
   	@adminuser_count = AdminUser.count
     @product_count = Product.count
     @listing_count = Listing.count
+    @team_count = Team.count
   end
 
   def login

@@ -8,17 +8,17 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <div class="panel panel-default">
+    <div class="panel panel-yellow">
       <div class="panel-heading">
         <%= link_to 'Add New Listing', 
             new_listing_path(:product_id => @product.id), 
-            class: "btn btn-square-toround btn-bordered-success btn-md" %>         
+            class: "btn btn-square-toround btn-bordered-primary btn-md" %>         
       </div>
       <!-- .panel-heading -->
       <div class="panel-body">
         <% @listings.each.with_index do |listing, index| %>
         <div class="panel-group" id="accordion-list">
-          <div class="panel panel-green">
+          <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion-list" href="#collapse_<%= listing.id %>"><%= listing.name %></a>

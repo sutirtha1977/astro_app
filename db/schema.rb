@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227220356) do
+ActiveRecord::Schema.define(version: 20170301031514) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "first_name",      limit: 25
@@ -43,6 +43,24 @@ ActiveRecord::Schema.define(version: 20170227220356) do
     t.boolean  "visible",     default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "first_name",  limit: 25
+    t.string   "last_name",   limit: 50
+    t.string   "email",       limit: 100, default: "", null: false
+    t.text     "description"
+    t.string   "address1",    limit: 100
+    t.string   "address2",    limit: 100
+    t.string   "city",        limit: 25
+    t.string   "state",       limit: 25
+    t.string   "country",     limit: 25
+    t.integer  "zip"
+    t.integer  "cell_phone"
+    t.integer  "home_phone"
+    t.string   "social"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
 end

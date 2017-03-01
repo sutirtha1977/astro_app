@@ -27,6 +27,7 @@ gem 'bootstrap-sass'
 gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'font-awesome-rails'
 gem "paperclip"
+gem 'phonelib'
 gem 'seed_dumper', '~> 0.1.3'
 
 group :development, :test do

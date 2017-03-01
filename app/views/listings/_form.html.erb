@@ -19,7 +19,7 @@
     <label for="origPrice">Original Price</label>
     <div class="input-group">
         <span class="input-group-addon">INR</span>
-        <%= f.text_field(:orig_price, class: 'form-control', id: 'orig_price') %> 
+        <%= f.number_field(:orig_price, class: 'form-control', id: 'orig_price') %> 
         <span class="input-group-addon">.00</span> 
     </div>
 </div>
@@ -27,7 +27,7 @@
     <label for="currPrice">Current Price</label>
     <div class="input-group">
         <span class="input-group-addon">INR</span>
-        <%= f.text_field(:curr_price, class: 'form-control', id: 'curr_price', placeholder: 'Enter Current Price') %>
+        <%= f.number_field(:curr_price, class: 'form-control', id: 'curr_price', placeholder: 'Enter Current Price') %>
         <span class="input-group-addon">.00</span>
     </div> 
 </div>

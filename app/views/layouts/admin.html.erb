@@ -15,17 +15,20 @@
       <%= render 'layouts/admin_header' %>
       </header>
       <div id="page-wrapper">
-        <% flash.each do |name, msg| %>
-          <% if msg.is_a?(String) %>
-            <div class="alert alert-<%= name == :notice ? "danger" : "success" %> alert-dismissable">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <%= content_tag :div, msg, :id => "flash_#{name}" %>
-            </div>
-          <% end %>
-        <% end %>  
-        <%= yield %>
-      </div>
-    </div>
-    <!-- /#wrapper -->
+        <div class="container-fluid">
+          <div class="row">
+            <% flash.each do |name, msg| %>
+              <% if msg.is_a?(String) %>
+                <div class="alert alert-<%= name == :notice ? "danger" : "success" %> alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+                </div>
+              <% end %>
+            <% end %>  
+            <%= yield %>
+          </div> <!-- row -->
+        </div> <!-- container-fluid -->
+      </div> <!-- /#page-wrapper -->
+    </div> <!-- /#wrapper -->
   </body>
 </html>

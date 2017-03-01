@@ -11,7 +11,12 @@ class Listing < ApplicationRecord
 					 :uniqueness => {:scope => :product_id}
 	validates_presence_of :short_desc
 	validates_presence_of :long_desc
-	validates_presence_of :orig_price			 
 
+	validates :orig_price, :presence => true,
+						   :numericality => true,
+						   :format => { :with => /\A\d{1,4}(\.\d{0,2})?\z/ }
+		 
+	validates :curr_price, :numericality => true,
+						   :format => { :with => /\A\d{1,4}(\.\d{0,2})?\z/ }
 
 end
