@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :listings do
+  resources :listings , :except => [:show] do
     member do
       get :delete
     end

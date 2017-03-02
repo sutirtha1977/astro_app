@@ -16,8 +16,14 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @teams = Team.all
-    @team = Team.create(team_params)
+    @team = Team.new(team_params)
+    if @team.save
+      flash[:notice] = "Member created successfully."
+      redirect_to(teams_path)
+    else
+      render "new.js.erb"
+    end
+
   end
 
   def edit
@@ -25,10 +31,14 @@ class TeamsController < ApplicationController
   end
 
   def update
-    @teams = Team.all
     @team = Team.find(params[:id])
+    if @team.update_attributes(team_params)
+      flash[:notice] = 'Member updated successfully.'
+      redirect_to(teams_path)
+    else
+      render "edit.js.erb"
+    end  
 
-    @team.update_attributes(team_params)
   end
 
   def delete
@@ -36,9 +46,10 @@ class TeamsController < ApplicationController
   end
 
   def destroy
-    @teams = Team.all
     @team = Team.find(params[:id])
     @team.destroy
+    flash[:notice] = "Member '#{@team.name}' destroyed successfully."
+    redirect_to(teams_path)
   end
 
   private

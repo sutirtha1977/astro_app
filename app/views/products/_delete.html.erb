@@ -2,14 +2,14 @@
   <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h3>Delete Admin User</h3>
+      <h3>Delete Category</h3>
     </div>
     <div class="modal-body">
       <ul class="errors"></ul>
-      Are you sure you wish to delete <b><%= @admin_user.name %></b>?
+      Are you sure you wish to delete <b><%= @product.name %></b>?
     </div>
     <div class="modal-footer">
-      <%= link_to "Yes, Delete This Admin User", admin_user_path(@admin_user), method: :delete, remote: true, class: "btn btn-bordered-danger" %>
+      <%= link_to "Yes, Delete This Category", product_path(@product), method: :delete, remote: true, class: "btn btn-bordered-danger" %>
       <%= link_to "No, Please Don't", "#", class: "btn btn-bordered-success", data: { dismiss: "modal" } %>
     </div>
   </div>

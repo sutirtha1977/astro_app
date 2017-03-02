@@ -13,10 +13,8 @@ class Listing < ApplicationRecord
 	validates_presence_of :long_desc
 
 	validates :orig_price, :presence => true,
-						   :numericality => true,
-						   :format => { :with => /\A\d{1,4}(\.\d{0,2})?\z/ }
+						   :numericality => true
 		 
-	validates :curr_price, :numericality => true,
-						   :format => { :with => /\A\d{1,4}(\.\d{0,2})?\z/ }
+	validates :curr_price, :numericality => true
 
 end

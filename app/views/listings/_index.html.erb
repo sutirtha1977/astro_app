@@ -1,0 +1,39 @@
+<% @listings.each.with_index do |listing, index| %>
+<div class="panel-group" id="accordion-list">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion-list" href="#collapse_<%= listing.id %>"><%= listing.name %></a>
+        </h4>
+    </div>
+    <% if index === 0 %>
+      <div id="collapse_<%= listing.id %>" class="panel-collapse collapse in">
+    <% else %>
+      <div id="collapse_<%= listing.id %>" class="panel-collapse collapse">
+    <% end %>            
+        <div class="panel-body">
+          <h4><%= @product.name %></h4> 
+          <p><%= listing.short_desc %></p>  
+          <p><%= listing.long_desc %></p>  
+          <h3 class="text-center"><%= number_to_currency(listing.orig_price, 
+              :unit => "INR", :format => "%u %n") %></h3>
+          <h3 class="text-center"><%= number_to_currency(listing.curr_price, 
+              :unit => "INR", :format => "%u %n") %></h3>
+        <p class="pull-right">
+          <%= link_to(edit_listing_path(listing, :product_id => @product.id), :remote => true, :class => "btn btn-success btn-circle") do %>
+              <i class="fa fa-edit fa-fw" aria-hidden="true"></i> 
+          <% end %>  
+          <%= link_to(delete_listing_path(listing,:product_id => @product.id), :remote => true, :class => "btn btn-danger btn-circle") do %>
+              <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> 
+          <% end %> 
+          <% if listing.visible %>
+            <i class="fa fa-eye fa-lg" aria-hidden="true"></i>
+          <% else %>
+            <i class="fa fa-eye-slash fa-lg" aria-hidden="true"></i>
+          <% end %>    
+        </p>
+        </div>
+    </div>
+  </div>
+</div>
+<% end %>

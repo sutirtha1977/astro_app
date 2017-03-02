@@ -1,41 +1,43 @@
-<%= error_messages_for(f.object) %>
-
-<div class="form-group">
-    <label for="listingName">Listing Name</label>
-    <%= f.text_field(:name, class: 'form-control', id: 'listingName', placeholder: 'Enter Listing Name') %>
-</div>
-
-<div class="form-group">
-    <label for="shortDesc">Brief Description</label>
-    <%= f.text_field(:short_desc, class: 'form-control', id: 'shortDesc', placeholder: 'Enter Brief Description') %>
-</div>
-
-<div class="form-group">
-    <label for="longDesc">Description</label>
-    <%= f.text_area(:long_desc, class: 'form-control', id: 'longDesc', rows:'6') %>
-</div>
-
-<div class="form-group input-group">
-    <label for="origPrice">Original Price</label>
-    <div class="input-group">
-        <span class="input-group-addon">INR</span>
-        <%= f.number_field(:orig_price, class: 'form-control', id: 'orig_price') %> 
-        <span class="input-group-addon">.00</span> 
+<%= form_for(@listing, :url => listing_path(@listing, :product_id => @product.id), remote: true, html: { style: "display:inline;" }) do |f| %>
+<div class="modal-body">
+    <ul class="errors"></ul>
+    <div class="form-group">
+        <%= f.label "Listing Name", class:"control-label" %>
+        <%= f.text_field(:name, class: 'form-control', id: 'listingName', placeholder: 'Enter Product Name') %>
     </div>
+    <div class="form-group">
+        <%= f.label "Brief Description", class:"control-label" %>
+        <%= f.text_field(:short_desc, class: 'form-control', id: 'shortDesc', placeholder: 'Enter Brief Description') %>
+    </div>
+    <div class="form-group">
+        <%= f.label "Description", class:"control-label" %>
+        <%= f.text_area(:long_desc, class: 'form-control', id: 'longDesc', rows:'6') %>
+    </div>
+    <div class="form-group input-group">
+        <%= f.label "Original Price", class:"control-label" %>
+        <div class="input-group">
+            <span class="input-group-addon">INR</span>
+            <%= f.number_field(:orig_price, class: 'form-control', id: 'orig_price') %> 
+            <span class="input-group-addon">.00</span> 
+        </div>
+    </div>
+    <div class="form-group input-group">
+        <%= f.label "Current Price", class:"control-label" %>
+        <div class="input-group">
+            <span class="input-group-addon">INR</span>
+            <%= f.number_field(:curr_price, class: 'form-control', id: 'curr_price', placeholder: 'Enter Current Price') %>
+            <span class="input-group-addon">.00</span>
+        </div> 
+    </div>
+    <div class="form-group">
+        <%= f.label "Visible", class:"control-label" %>
+        <%= f.check_box(:visible, class: 'checkbox-inline') %>
+    </div>
+
 </div>
-<div class="form-group input-group">
-    <label for="currPrice">Current Price</label>
-    <div class="input-group">
-        <span class="input-group-addon">INR</span>
-        <%= f.number_field(:curr_price, class: 'form-control', id: 'curr_price', placeholder: 'Enter Current Price') %>
-        <span class="input-group-addon">.00</span>
-    </div> 
+<div class="modal-footer">
+    <%= f.submit "Submit",class: "btn btn-bordered-primary" %>
+    <%= link_to "Cancel", "#", class: "btn btn-bordered-warning", data: {dismiss: "modal"} %>
 </div>
 
-<div class="form-group">
-    <label>Visible</label>
-    <%= f.check_box(:visible, class: 'checkbox-inline') %>
-</div>
-
-<%= link_to 'Cancel', listings_path(:product_id => @product.id), class: "btn btn-bordered-warning" %>
-<%= f.submit("Submit", :class => 'btn btn-bordered-primary') %>  
+<% end %>

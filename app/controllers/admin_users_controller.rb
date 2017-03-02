@@ -12,15 +12,13 @@ class AdminUsersController < ApplicationController
   end
 
   def create
-    # @admin_user = AdminUser.new(admin_user_params)
-    # if @admin_user.save
-    #   flash[:notice] = 'Admin user created successfully.'
-    #   redirect_to(admin_users_path)
-    # else
-    #   render('new')
-    # end
-    @admin_users = AdminUser.sorted
-    @admin_user = AdminUser.create(admin_user_params)    
+    @admin_user = AdminUser.new(admin_user_params)
+    if @admin_user.save
+      flash[:notice] = "Admin User created successfully."
+      redirect_to(admin_users_path)
+    else
+      render "new.js.erb"
+    end
   end
 
   def edit
@@ -28,17 +26,13 @@ class AdminUsersController < ApplicationController
   end
 
   def update
-    # @admin_user = AdminUser.find(params[:id])
-    # if @admin_user.update_attributes(admin_user_params)
-    #   flash[:notice] = 'Admin user updated successfully.'
-    #   redirect_to(admin_users_path)
-    # else
-    #   render('edit')
-    # end
-    @admin_users = AdminUser.sorted
     @admin_user = AdminUser.find(params[:id])
-
-    @admin_user.update_attributes(admin_user_params)    
+    if @admin_user.update_attributes(admin_user_params)
+      flash[:notice] = 'Admin user updated successfully.'
+      redirect_to(admin_users_path)
+    else
+      render "edit.js.erb"
+    end   
   end
 
   def delete
@@ -46,13 +40,10 @@ class AdminUsersController < ApplicationController
   end
 
   def destroy
-    # @admin_user = AdminUser.find(params[:id])
-    # @admin_user.destroy
-    # flash[:notice] = "Admin user destroyed successfully."
-    # redirect_to(admin_users_path)
-    @admin_users = AdminUser.sorted
     @admin_user = AdminUser.find(params[:id])
     @admin_user.destroy
+    flash[:notice] = "Admin user '#{@admin_user.name}' destroyed successfully."
+    redirect_to(admin_users_path)
   end
 
   private

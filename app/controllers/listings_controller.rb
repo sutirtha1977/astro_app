@@ -17,17 +17,13 @@ class ListingsController < ApplicationController
   end
 
   def create
-    # Instantiate a new object using form parameters
     @listing = Listing.new(listing_params)
-    @listing.product = @product
-    # Save the object
+    @listing.product = @product 
     if @listing.save
-      # If save succeeds, redirect to the index action
       flash[:notice] = "Listing created successfully."
       redirect_to(listings_path(:product_id => @product.id))
     else
-      # If save fails, redisplay the form so user can fix problems
-      render('new')
+      render "new.js.erb"
     end 
   end
 
@@ -36,16 +32,12 @@ class ListingsController < ApplicationController
   end
 
   def update
-    # Find a new object using form parameters
     @listing = Listing.find(params[:id])
-    # Update the object
     if @listing.update_attributes(listing_params)
-      # If save succeeds, redirect to the show action
       flash[:notice] = "Listing updated successfully."
-      redirect_to(listings_path(@listing, :product_id => @product.id))
+      redirect_to(listings_path(:product_id => @product.id))
     else
-      # If save fails, redisplay the form so user can fix problems
-      render('edit')
+      render "edit.js.erb"
     end
   end
 
@@ -57,7 +49,7 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     @listing.destroy
     flash[:notice] = "Listing '#{@listing.name}' destroyed successfully."
-    redirect_to(listings_path(:product_id => @product.id))    
+    redirect_to(listings_path(:product_id => @product.id))   
   end
 
 private

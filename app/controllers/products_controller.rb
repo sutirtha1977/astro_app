@@ -16,16 +16,12 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # Instantiate a new object using form parameters
     @product = Product.new(product_params)
-    # Save the object
     if @product.save
-      # If save succeeds, redirect to the index action
-      flash[:notice] = "Product created successfully."
+      flash[:notice] = "Category created successfully."
       redirect_to(products_path)
     else
-      # If save fails, redisplay the form so user can fix problems
-      render('new')
+      render "new.js.erb"
     end
   end
 
@@ -34,16 +30,12 @@ class ProductsController < ApplicationController
   end
 
   def update
-    # Find a new object using form parameters
     @product = Product.find(params[:id])
-    # Update the object
     if @product.update_attributes(product_params)
-      # If save succeeds, redirect to the show action
-      flash[:notice] = "Product updated successfully."
+      flash[:notice] = "Category updated successfully."
       redirect_to(products_path)
     else
-      # If save fails, redisplay the form so user can fix problems
-      render('edit')
+      render "edit.js.erb"
     end
   end
 
@@ -52,10 +44,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @products = Product.sorted
     @product = Product.find(params[:id])
     @product.destroy
-    flash[:notice] = "Product '#{@product.name}' destroyed successfully."
-    redirect_to(products_path)
+    flash[:notice] = "Category '#{@product.name}' destroyed successfully."
+    redirect_to(products_path)   
   end
 
 private
