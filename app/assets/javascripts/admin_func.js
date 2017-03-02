@@ -3,6 +3,8 @@
 // Sets the min-height of #page-wrapper to window size
 $(function() {
 
+
+
     //make menus drop automatically
     $('ul.nav li.dropdown').hover(function() {
         $('.dropdown-menu', this).fadeIn();
@@ -10,8 +12,12 @@ $(function() {
         $('.dropdown-menu', this).fadeOut('fast');
     });//hover
     
-    //dataTables-product responsive
+    
     $(document).on('turbolinks:load', function() {
+        //tool tip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        //dataTables-product responsive
         $('#dataTables-product').DataTable({
             responsive: true,
             "columns": [
@@ -22,10 +28,7 @@ $(function() {
                 { "orderable": false }
             ]
         });
-    });
-
-    // dataTables-adminuser responsive
-    $(document).on('turbolinks:load', function() {
+        //dataTables-adminuser responsive
         $('#dataTables-adminuser').DataTable({
             responsive: true,
             "columns": [
@@ -35,10 +38,7 @@ $(function() {
                 { "orderable": false }
             ]
         });
-    });
-
-    // dataTables-team responsive
-    $(document).on('turbolinks:load', function() {
+        //dataTables-team responsive
         $('#dataTables-team').DataTable({
             responsive: true,
             "columns": [
@@ -49,6 +49,7 @@ $(function() {
             ]
         });
     });
+
 
     $(window).bind("load resize", function() {
         var topOffset = 50;

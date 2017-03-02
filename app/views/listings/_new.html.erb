@@ -4,6 +4,11 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h1 class="page-header">New Listing</h1>
 		</div>
-		<%= render "form" %>
+		<%= form_for(@listing, 
+			:url => listings_path(@listing, :product_id => @product.id), 
+			remote: true, 
+			html: { style: "display:inline;" }) do |f| %>
+			<%= render(:partial => 'form', :locals => {:f => f}) %> 
+		<% end %>
 	</div>
 </div>

@@ -15,18 +15,29 @@
       <%= truncate(product.description, :length => 30) %>
     </td>
     <td class="text-center">
-        <%= link_to(product_path(product), :remote => true, :class => "btn btn-info btn-circle") do %>
+        <%= link_to(product_path(product), 
+            :remote => true, 
+            "data-toggle": "tooltip", "data-placement": "top", :title => "Show Category",
+            :class => "btn btn-info btn-circle") do %>
             <i class="fa fa-flag fa-fw" aria-hidden="true"></i> 
         <% end %>  
-        <%= link_to(edit_product_path(product), :remote => true, :class => "btn btn-success btn-circle") do %>
+        <%= link_to(edit_product_path(product), 
+            :remote => true, 
+            "data-toggle": "tooltip", "data-placement": "top", :title => "Edit Category",
+            :class => "btn btn-success btn-circle") do %>
             <i class="fa fa-edit fa-fw" aria-hidden="true"></i> 
         <% end %>  
-        <%= link_to(delete_product_path(product), :remote => true,:class => "btn btn-danger btn-circle") do %>
+        <%= link_to(delete_product_path(product), 
+            :remote => true,
+            "data-toggle": "tooltip", "data-placement": "top", :title => "Delete Category",
+            :class => "btn btn-danger btn-circle") do %>
             <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> 
         <% end %>        
     </td>
     <td class="text-center">
-        <%= link_to(listings_path(:product_id => product.id), :class => "btn btn-primary btn-circle") do %>
+        <%= link_to(listings_path(:product_id => product.id), 
+            "data-toggle": "tooltip", "data-placement": "top", :title => "Show Listings",
+            :class => "btn btn-primary btn-circle") do %>
             <i class="fa fa-list fa-fw"></i>
         <% end %>          
     </td>

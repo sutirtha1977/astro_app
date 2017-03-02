@@ -20,10 +20,16 @@
           <h3 class="text-center"><%= number_to_currency(listing.curr_price, 
               :unit => "INR", :format => "%u %n") %></h3>
         <p class="pull-right">
-          <%= link_to(edit_listing_path(listing, :product_id => @product.id), :remote => true, :class => "btn btn-success btn-circle") do %>
+          <%= link_to(edit_listing_path(listing, :product_id => @product.id), 
+              :remote => true, 
+              "data-toggle": "tooltip", "data-placement": "top", :title => "Edit Listing",
+              :class => "btn btn-success btn-circle") do %>
               <i class="fa fa-edit fa-fw" aria-hidden="true"></i> 
           <% end %>  
-          <%= link_to(delete_listing_path(listing,:product_id => @product.id), :remote => true, :class => "btn btn-danger btn-circle") do %>
+          <%= link_to(delete_listing_path(listing,:product_id => @product.id), 
+              :remote => true, 
+              "data-toggle": "tooltip", "data-placement": "top", :title => "Delete Listing",
+              :class => "btn btn-danger btn-circle") do %>
               <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> 
           <% end %> 
           <% if listing.visible %>

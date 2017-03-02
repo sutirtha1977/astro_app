@@ -7,18 +7,16 @@
     <div class="modal-body">
       <div class="panel panel-default">
           <div class="panel-heading">
-              <%= @team.email %>
+              <%= @team.title %>
           </div> <!-- /.panel-heading -->      
           <div class="panel-body">
               <!-- Nav tabs -->
               <ul class="nav nav-pills">
                   <li class="active"><a href="#desc-pills" data-toggle="tab">Description</a>
                   </li>
-                  <li><a href="#add-pills" data-toggle="tab">Address</a>
+                  <li><a href="#con-pills" data-toggle="tab">Contact</a>
                   </li>
-                  <li><a href="#ph-pills" data-toggle="tab">Phone</a>
-                  </li>
-                  <li><a href="#oth-pills" data-toggle="tab">Others</a>
+                  <li><a href="#oth-pills" data-toggle="tab">Social</a>
                   </li>
               </ul>
               <!-- Tab panes -->
@@ -28,25 +26,18 @@
                       <p><%= @team.description %></p>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="add-pills">
+                  <div class="tab-pane fade" id="con-pills">
                     <div class="well">
-                      <p><%= @team.address1 %></p>
-                      <p><%= @team.address2 %></p>
-                      <p><%= @team.city %></p>
-                      <p><%= @team.state %></p>
-                      <p><%= @team.country %></p>
-                      <p><%= @team.zip %></p>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade" id="ph-pills">
-                    <div class="well">
+                      <p><%= @team.email %></p>
                       <p><%= @team.cell_phone %></p>
-                      <p><%= @team.home_phone %></p>
                     </div>
                   </div>
                   <div class="tab-pane fade" id="oth-pills">
                     <div class="well">
-                      <strong>Under Construction</strong>
+                      <p><%= @team.google %></p>
+                      <p><%= @team.facebook %></p>
+                      <p><%= @team.twitter %></p>
+                      <p><%= @team.linkedin %></p>
                     </div>
                   </div>
               </div>

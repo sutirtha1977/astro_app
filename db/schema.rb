@@ -48,17 +48,14 @@ ActiveRecord::Schema.define(version: 20170301031514) do
   create_table "teams", force: :cascade do |t|
     t.string   "first_name",  limit: 25
     t.string   "last_name",   limit: 50
+    t.string   "title"
     t.string   "email",       limit: 100, default: "", null: false
     t.text     "description"
-    t.string   "address1",    limit: 100
-    t.string   "address2",    limit: 100
-    t.string   "city",        limit: 25
-    t.string   "state",       limit: 25
-    t.string   "country",     limit: 25
-    t.integer  "zip"
     t.string   "cell_phone"
-    t.string   "home_phone"
-    t.string   "social"
+    t.string   "google"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "linkedin"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
   end

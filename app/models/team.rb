@@ -10,8 +10,8 @@ class Team < ApplicationRecord
 	        :format => EMAIL_REGEX,
 	        :confirmation => true
 	validates :description, :presence => true
+	validates :title, :presence => true
 
-	# validates_numericality_of :zip
 
 	scope :sorted, lambda { order('last_name ASC, first_name ASC')}
 

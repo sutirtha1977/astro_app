@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-lg-12">
-      <h2 class="page-header">All Listings</h2>
+      <h2 class="page-header">Listings for {<%= @product.name %>}</h2>
   </div>
 </div> <!-- /.col-lg-12 -->
 
@@ -12,6 +12,7 @@
       <div class="panel-heading">
           <%= link_to 'Add Listing', 
               new_listing_path(:product_id => @product.id), 
+              "data-toggle": "tooltip", "data-placement": "right", :title => "Add Listing",
               remote: true,
               class: "btn btn-square-toround btn-bordered-warning btn-md" %>
       </div> <!-- /.panel-heading -->

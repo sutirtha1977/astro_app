@@ -58,17 +58,14 @@ class TeamsController < ApplicationController
     params.require(:team).permit(
       :first_name,
       :last_name,
+      :title,
       :email,
       :description,
-      :address1,
-      :address2,
-      :city,
-      :state,
-      :country,
-      :zip,
       :cell_phone,
-      :home_phone,
-      :social
+      :google,
+      :facebook,
+      :twitter,
+      :linkedin
     )
   end
 end
