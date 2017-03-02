@@ -8,7 +8,8 @@ class Product < ApplicationRecord
   	scope :search, lambda {|query| where(["name LIKE ?", "%#{query}%"]) }
 
   	validates :name, :presence => true,
-					 :length => { :maximum => 255 }
+					 :length => { :maximum => 255 },
+					 :uniqueness => { :case_sensitive => false }
 	validates_presence_of :description
 	validates_presence_of :category
 end

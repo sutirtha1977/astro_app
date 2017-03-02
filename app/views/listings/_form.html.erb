@@ -2,13 +2,13 @@
     <ul class="errors"></ul>
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
-            <%= f.text_field(:name, class: 'form-control', id: 'listingName', placeholder: 'Listing Name') %>
+            <%= f.text_field(:name, class: 'text-cp form-control', placeholder: 'Listing Name') %>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
-            <%= f.text_field(:short_desc, class: 'form-control', id: 'shortDesc', placeholder: 'Enter Brief Description') %>
+            <%= f.text_field(:short_desc, class: 'form-control', placeholder: 'Enter Brief Description') %>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
-            <%= f.text_area(:long_desc, class: 'form-control', id: 'longDesc', rows:'6',  placeholder: 'Describe in details...') %>
+            <%= f.text_area(:long_desc, class: 'form-control', rows:'6',  placeholder: 'Describe in details...') %>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 text-center text-danger" style="padding-bottom: 10px;">
             <%= f.label "Original Price", class:"control-label" %>

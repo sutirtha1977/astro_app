@@ -1,17 +1,21 @@
 <% @products.each do |product| %>
 <tr>
-    <td>
+     <td class="text-center">
+      <%= product.category %>
+    </td>  
+    <td class="text-center">
         <%= product.name %>
         <% if product.visible %>
-            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>
+            <i class="fa fa-eye fa-fw" 
+            data-toggle= "tooltip"  data-placement= "top" title = "visible" 
+            aria-hidden="true"></i>
         <% else %>
-            <i class="fa fa-eye-slash fa-fw" aria-hidden="true"></i>
+            <i class="fa fa-eye-slash fa-fw"
+            data-toggle= "tooltip"  data-placement= "top" title = "visible"  
+            aria-hidden="true"></i>
         <% end %>        
     </td>
-     <td>
-      <%= product.category %>
-    </td>   
-    <td>
+    <td class="text-center">
       <%= truncate(product.description, :length => 30) %>
     </td>
     <td class="text-center">

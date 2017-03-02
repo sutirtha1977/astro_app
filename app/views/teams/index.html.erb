@@ -2,18 +2,22 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h2 class="page-header">Team Members</h2>
+        <h2 class="page-header text-danger">Team Members
+          <small>( count: <%= @teams.count %> )</small>
+        </h2>
     </div>
 </div> <!-- /.col-lg-12 -->
 
 <div class="row">
   <div class="col-lg-12">
-    <div class="panel panel-red">
+    <div class="panel panel-default">
       <div class="panel-heading">
           <%= link_to(new_team_path, 
               remote: true,
-              class: "btn btn-square-toround btn-bordered-warning btn-md") do %>
-            <i class="fa fa-plus"></i> Member
+              class: "btn btn-labeled btn-danger") do %>
+            <span class="btn-label">
+              <i class="fa fa-plus"></i>
+            </span> Member
           <% end %>
       </div> <!-- /.panel-heading -->
       <div class="panel-body">

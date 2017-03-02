@@ -1,6 +1,6 @@
 <% @listings.each.with_index do |listing, index| %>
 <div class="panel-group" id="accordion-list">
-  <div class="panel panel-default">
+  <div class="panel panel-<%= index.odd? ? 'default' : 'primary' %>">
     <div class="panel-heading">
         <h3 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion-list" href="#collapse_<%= listing.id %>"><%= listing.name %></a>
@@ -36,9 +36,13 @@
                 <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> 
             <% end %> 
             <% if listing.visible %>
-              <i class="fa fa-eye fa-lg" aria-hidden="true"></i>
+              <i class="fa fa-eye fa-lg" 
+              data-toggle= "tooltip"  data-placement= "top" title = "visible" 
+              aria-hidden="true"></i>
             <% else %>
-              <i class="fa fa-eye-slash fa-lg" aria-hidden="true"></i>
+              <i class="fa fa-eye-slash fa-lg" 
+              data-toggle= "tooltip"  data-placement= "top" title = "visible" 
+              aria-hidden="true"></i>
             <% end %>    
           </p>
         </div>

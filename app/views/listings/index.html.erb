@@ -2,18 +2,23 @@
 
 <div class="row">
   <div class="col-lg-12">
-      <h2 class="page-header">Listings for {<%= @product.name %>}</h2>
+      <h2 class="page-header text-warning">Listings for 
+        <u><%= @product.name %></u>
+        <small>( count: <%= @listings.count %> )</small>
+      </h2>
   </div>
 </div> <!-- /.col-lg-12 -->
 
 <div class="row">
   <div class="col-lg-12">
-    <div class="panel panel-yellow">
+    <div class="panel panel-default">
       <div class="panel-heading">
           <%= link_to(new_listing_path(:product_id => @product.id), 
               remote: true,
-              class: "btn btn-square-toround btn-bordered-warning btn-md") do %>
-            <i class="fa fa-plus"></i> Listing
+              class: "btn btn-labeled btn-warning") do %>
+            <span class="btn-label">
+              <i class="fa fa-plus"></i>
+            </span> Listing
           <% end %>
       </div> <!-- /.panel-heading -->
       <div class="panel-body listing-index">

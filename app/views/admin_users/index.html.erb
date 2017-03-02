@@ -2,18 +2,22 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h2 class="page-header">Admin Users</h2>
+        <h2 class="page-header text-primary">Admin Users 
+          <small>( count: <%= @admin_users.count %> )</small>
+        </h2>
     </div>
 </div> <!-- /.col-lg-12 -->
 
 <div class="row">
   <div class="col-lg-12">
-    <div class="panel panel-blue">
+    <div class="panel panel-default">
       <div class="panel-heading">
           <%= link_to(new_admin_user_path, 
               remote: true,
-              class: "btn btn-square-toround btn-bordered-info btn-md") do %>
-              <i class="fa fa-plus"></i> User
+              class: "btn btn-labeled btn-primary") do %>
+              <span class="btn-label">
+                <i class="fa fa-plus"></i>
+              </span> User
           <% end %>
       </div> <!-- /.panel-heading -->
       <div class="panel-body">

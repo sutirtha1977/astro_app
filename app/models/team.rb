@@ -8,7 +8,7 @@ class Team < ApplicationRecord
 	validates :email, :presence => true,
 	        :length => { :maximum => 100 },
 	        :format => EMAIL_REGEX,
-	        :confirmation => true
+	        :uniqueness => { :case_sensitive => false }
 	validates :description, :presence => true
 	validates :title, :presence => true
 	# validates :cell_phone, :presence => true

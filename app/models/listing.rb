@@ -8,7 +8,7 @@ class Listing < ApplicationRecord
 
   	validates :name, :presence => true,
 					 :length => { :maximum => 255 },
-					 :uniqueness => {:scope => :product_id}
+					 :uniqueness => {:case_sensitive => false, :scope => :product_id}
 	validates_presence_of :short_desc
 	validates_presence_of :long_desc
 

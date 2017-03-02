@@ -1,17 +1,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
 body {
   background-color: #f8f8f8;
+  font-family: "Roboto";
 }
+
 #wrapper {
   width: 100%;
 }
 #page-wrapper {
   padding: 0 15px;
   min-height: 568px;
-  background-color: white;
+  background-color: #FFFFFF;
 }
 @media (min-width: 768px) {
   #page-wrapper {
@@ -458,3 +460,10 @@ table.dataTable thead .sorting:after {
 .btn-bordered-danger{color:#D9534F;background:#FFFFFF;border:2px solid #D9534F}
 .btn-bordered-danger:hover{color:#FFFFFF;background:#D9534F;border:2px solid #FFFFFF}
  // Button END
+
+ .text-cp { text-transform: capitalize;}
+ .text-dn { text-transform: lowercase;}
+ .text-up { text-transform: uppercase;}
+ .text-fn {
+    text-transform: lowercase;
+ }

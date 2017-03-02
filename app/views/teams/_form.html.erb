@@ -4,21 +4,21 @@
 	<ul class="errors"></ul>
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-			<%= f.text_field(:first_name, class: 'form-control', placeholder: 'Firstname') %>
+			<%= f.text_field(:first_name, class: 'text-cp form-control', placeholder: 'Firstname') %>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-			<%= f.text_field(:last_name, class: 'form-control', placeholder: 'Latname') %>
+			<%= f.text_field(:last_name, class: 'text-cp form-control', placeholder: 'Lastname') %>
 		</div>
 		<div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
-			<%= f.text_field(:title, class: 'form-control', placeholder: 'Title') %>
+			<%= f.text_field(:title, class: 'text-cp form-control', placeholder: 'Title') %>
 		</div>
 		<div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
-		    <%= f.text_area(:description, class: 'form-control', rows:'6', placeholder: 'Tell about yourself...') %>
+		    <%= f.text_area(:description, class: 'text-cp form-control', rows:'6', placeholder: 'Tell about yourself...') %>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-		    	<%= f.email_field(:email, class: 'form-control', placeholder: 'E-mail') %>
+		    	<%= f.email_field(:email, class: 'text-dn form-control', placeholder: 'E-mail') %>
 		    </div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
@@ -29,26 +29,26 @@
 		</div>	
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
 			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-google-plus"></i></span>
-				<%= f.text_field(:google, class: 'form-control', placeholder: 'google-link') %>
+				<span class="input-group-addon"><i class="fa fa-google"></i></span>
+				<%= f.text_field(:google, class: 'text-dn form-control', placeholder: 'google-link') %>
 			</div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-facebook"></i></span>
-				<%= f.text_field(:facebook, class: 'form-control', placeholder: 'facebook-link') %>
+				<%= f.text_field(:facebook, class: 'text-dn form-control', placeholder: 'facebook-link') %>
 			</div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-twitter"></i></span>
-				<%= f.text_field(:twitter, class: 'form-control', placeholder: 'twitter-link') %>
+				<%= f.text_field(:twitter, class: 'text-dn form-control', placeholder: 'twitter-link') %>
 			</div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-linkedin"></i></span>
-				<%= f.text_field(:linkedin, class: 'form-control', placeholder: 'linkedin-link') %>
+				<%= f.text_field(:linkedin, class: 'text-dn form-control', placeholder: 'linkedin-link') %>
 			</div>
 		</div>
 	</div>
