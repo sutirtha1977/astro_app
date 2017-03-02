@@ -1,9 +1,12 @@
 <% @listings.each.with_index do |listing, index| %>
 <div class="panel-group" id="accordion-list">
   <div class="panel panel-<%= index.odd? ? 'default' : 'primary' %>">
-    <div class="panel-heading">
+    <div class="panel-heading" data-toggle= "tooltip"  data-placement= "bottom" title = "Click to view listing details">
         <h3 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion-list" href="#collapse_<%= listing.id %>"><%= listing.name %></a>
+            <a data-toggle="collapse" 
+              data-parent="#accordion-list"  
+              href="#collapse_<%= listing.id %>"><%= listing.name %>
+            </a>
         </h3>
     </div>
     <% if index === 0 %>
