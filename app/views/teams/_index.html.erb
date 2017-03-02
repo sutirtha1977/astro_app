@@ -2,7 +2,7 @@
 <tr>
     <td><%= team.first_name %></td>
     <td><%= team.last_name %></td>
-    <td><%= mail_to(team.email) %></td>
+    <td class="text-center"><%= mail_to(team.email) %></td>
     <td class="text-center">
         <%= link_to(team_path(team), 
             :remote => true, 
