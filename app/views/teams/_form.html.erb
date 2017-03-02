@@ -16,22 +16,40 @@
 		    <%= f.text_area(:description, class: 'form-control', rows:'6', placeholder: 'Tell about yourself...') %>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-		    <%= f.email_field(:email, class: 'form-control', placeholder: 'E-mail') %>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+		    	<%= f.email_field(:email, class: 'form-control', placeholder: 'E-mail') %>
+		    </div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-			<%= f.text_field(:cell_phone, class: 'form-control', placeholder: 'Phone') %>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-mobile-phone"></i></span>
+				<%= f.text_field(:cell_phone, class: 'form-control', placeholder: 'Phone') %>
+			</div>
 		</div>	
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-			<%= f.text_field(:google, class: 'form-control', placeholder: 'google-link') %>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-google-plus"></i></span>
+				<%= f.text_field(:google, class: 'form-control', placeholder: 'google-link') %>
+			</div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-			<%= f.text_field(:facebook, class: 'form-control', placeholder: 'facebook-link') %>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-facebook"></i></span>
+				<%= f.text_field(:facebook, class: 'form-control', placeholder: 'facebook-link') %>
+			</div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-			<%= f.text_field(:twitter, class: 'form-control', placeholder: 'twitter-link') %>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-twitter"></i></span>
+				<%= f.text_field(:twitter, class: 'form-control', placeholder: 'twitter-link') %>
+			</div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-			<%= f.text_field(:linkedin, class: 'form-control', placeholder: 'linkedin-link') %>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-linkedin"></i></span>
+				<%= f.text_field(:linkedin, class: 'form-control', placeholder: 'linkedin-link') %>
+			</div>
 		</div>
 	</div>
 </div>
