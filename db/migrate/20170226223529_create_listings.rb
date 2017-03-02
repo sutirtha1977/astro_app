@@ -6,7 +6,7 @@ class CreateListings < ActiveRecord::Migration[5.0]
 		t.string 	:short_desc
 		t.text 		:long_desc
 		t.boolean 	:visible, default: false
-		t.decimal 	:orig_price, precision: 12, scale:2
+		t.decimal 	:orig_price, precision: 12, scale:2, default: 0
 		t.decimal 	:curr_price, precision: 12, scale:2, default: 0
 		t.timestamps
     end

@@ -1,41 +1,36 @@
 <div class="modal-body">
     <ul class="errors"></ul>
-    <div class="form-group">
-        <%= f.label "Listing Name", class:"control-label" %>
-        <%= f.text_field(:name, class: 'form-control', id: 'listingName', placeholder: 'Enter Product Name') %>
-    </div>
-    <div class="form-group">
-        <%= f.label "Brief Description", class:"control-label" %>
-        <%= f.text_field(:short_desc, class: 'form-control', id: 'shortDesc', placeholder: 'Enter Brief Description') %>
-    </div>
-    <div class="form-group">
-        <%= f.label "Description", class:"control-label" %>
-        <%= f.text_area(:long_desc, class: 'form-control', id: 'longDesc', rows:'6') %>
-    </div>
-    <div class="form-group input-group">
-        <%= f.label "Original Price", class:"control-label" %>
-        <div class="input-group">
-            <span class="input-group-addon">INR</span>
-            <%= f.number_field(:orig_price, class: 'form-control', id: 'orig_price') %> 
-            <span class="input-group-addon">.00</span> 
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+            <%= f.text_field(:name, class: 'form-control', id: 'listingName', placeholder: 'Listing Name') %>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+            <%= f.text_field(:short_desc, class: 'form-control', id: 'shortDesc', placeholder: 'Enter Brief Description') %>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+            <%= f.text_area(:long_desc, class: 'form-control', id: 'longDesc', rows:'6',  placeholder: 'Describe in details...') %>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 text-center text-danger" style="padding-bottom: 10px;">
+            <%= f.label "Original Price", class:"control-label" %>
+            <div class="input-group">
+                <span class="input-group-addon">INR</span>
+                <%= f.number_field(:orig_price, class: 'form-control') %> 
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 text-center text-danger" style="padding-bottom: 10px;">
+            <%= f.label "Current Price", class:"control-label" %>
+            <div class="input-group">
+                <span class="input-group-addon">INR</span>
+                <%= f.number_field(:curr_price, class: 'form-control') %>
+            </div> 
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center text-danger" style="padding-bottom: 10px;">
+            <%= f.check_box(:visible, class: 'checkbox-inline') %> Visible
         </div>
     </div>
-    <div class="form-group input-group">
-        <%= f.label "Current Price", class:"control-label" %>
-        <div class="input-group">
-            <span class="input-group-addon">INR</span>
-            <%= f.number_field(:curr_price, class: 'form-control', id: 'curr_price', placeholder: 'Enter Current Price') %>
-            <span class="input-group-addon">.00</span>
-        </div> 
-    </div>
-    <div class="form-group">
-        <%= f.label "Visible", class:"control-label" %>
-        <%= f.check_box(:visible, class: 'checkbox-inline') %>
-    </div>
-
 </div>
 <div class="modal-footer">
-    <%= f.submit "Submit",class: "btn btn-bordered-primary" %>
-    <%= link_to "Cancel", "#", class: "btn btn-bordered-warning", data: {dismiss: "modal"} %>
+    <%= link_to "Close", "#", class: "btn btn-secondary", data: {dismiss: "modal"} %>
+    <%= f.submit "Submit" ,class: "btn btn-primary" %>
 </div>
 

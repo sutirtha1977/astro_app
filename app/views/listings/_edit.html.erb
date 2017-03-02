@@ -1,14 +1,16 @@
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		  	<h1 class="page-header"><%= "Editing #{@listing.name}" %></h1>
+<div class="container">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			  	<h2 class="page-header text-danger"><%= "Editing #{@listing.name}" %></h2>
+			</div>
+			<%= form_for(@listing, 
+				:url => listing_path(@listing, :product_id => @product.id), 
+				remote: true, 
+				html: { style: "display:inline;" }) do |f| %>
+				<%= render(:partial => 'form', :locals => {:f => f}) %> 
+			<% end %>
 		</div>
-		<%= form_for(@listing, 
-			:url => listing_path(@listing, :product_id => @product.id), 
-			remote: true, 
-			html: { style: "display:inline;" }) do |f| %>
-			<%= render(:partial => 'form', :locals => {:f => f}) %> 
-		<% end %>
 	</div>
 </div>

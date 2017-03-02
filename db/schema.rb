@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20170301031514) do
     t.string   "short_desc"
     t.text     "long_desc"
     t.boolean  "visible",                             default: false
-    t.decimal  "orig_price", precision: 12, scale: 2
+    t.decimal  "orig_price", precision: 12, scale: 2, default: "0.0"
     t.decimal  "curr_price", precision: 12, scale: 2, default: "0.0"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
