@@ -11,7 +11,7 @@ class Team < ApplicationRecord
 	        :confirmation => true
 	validates :description, :presence => true
 	validates :title, :presence => true
-	validates :cell_phone, :presence => true
+	# validates :cell_phone, :presence => true
 
 
 	scope :sorted, lambda { order('last_name ASC, first_name ASC')}

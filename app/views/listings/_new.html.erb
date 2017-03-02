@@ -9,6 +9,7 @@
 				:url => listings_path(@listing, :product_id => @product.id), 
 				remote: true, 
 				html: { style: "display:inline;" }) do |f| %>
+				<%= error_messages_for(f.object) %>
 				<%= render(:partial => 'form', :locals => {:f => f}) %> 
 			<% end %>
 		</div>
