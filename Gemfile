@@ -29,7 +29,9 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'font-awesome-rails'
-gem "paperclip"
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
+gem 'remotipart', '~> 1.2'
 gem 'seed_dumper', '~> 0.1.3'
 
 group :development, :test do

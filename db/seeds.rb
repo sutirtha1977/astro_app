@@ -857,7 +857,7 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:cell_phone => 9876543210,
+	:cell_phone => "+91 9876543210",
 	:google => "www.google.com",
 	:facebook => "www.facebook.com",
 	:twitter => "www.twitter.com",
@@ -894,7 +894,7 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:cell_phone => 9876543210,
+	:cell_phone => "+91 9876543210",
 	:google => "www.google.com",
 	:facebook => "www.facebook.com",
 	:twitter => "www.twitter.com",
@@ -913,7 +913,7 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:cell_phone => 9876543210,
+	:cell_phone => "+91 9876543210",
 	:google => "www.google.com",
 	:facebook => "www.facebook.com",
 	:twitter => "www.twitter.com",
@@ -932,7 +932,7 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:cell_phone => 9876543210,
+	:cell_phone => "+91 9876543210",
 	:google => "www.google.com",
 	:facebook => "www.facebook.com",
 	:twitter => "www.twitter.com",
@@ -951,7 +951,7 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:cell_phone => 9876543210,
+	:cell_phone => "+91 9876543210",
 	:google => "www.google.com",
 	:facebook => "www.facebook.com",
 	:twitter => "www.twitter.com",
@@ -970,7 +970,7 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:cell_phone => 9876543210,
+	:cell_phone => "+91 9876543210",
 	:google => "www.google.com",
 	:facebook => "www.facebook.com",
 	:twitter => "www.twitter.com",
@@ -989,7 +989,7 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:cell_phone => 9876543210,
+	:cell_phone => "+91 9876543210",
 	:google => "www.google.com",
 	:facebook => "www.facebook.com",
 	:twitter => "www.twitter.com",
@@ -1008,7 +1008,7 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:cell_phone => 9876543210,
+	:cell_phone => "+91 9876543210",
 	:google => "www.google.com",
 	:facebook => "www.facebook.com",
 	:twitter => "www.twitter.com",
@@ -1027,7 +1027,7 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:cell_phone => 9876543210,
+	:cell_phone => "+91 9876543210",
 	:google => "www.google.com",
 	:facebook => "www.facebook.com",
 	:twitter => "www.twitter.com",
@@ -1046,7 +1046,7 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:cell_phone => 9876543210,
+	:cell_phone => "+91 9876543210",
 	:google => "www.google.com",
 	:facebook => "www.facebook.com",
 	:twitter => "www.twitter.com",

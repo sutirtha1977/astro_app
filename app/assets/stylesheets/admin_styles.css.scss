@@ -461,9 +461,15 @@ table.dataTable thead .sorting:after {
 .btn-bordered-danger:hover{color:#FFFFFF;background:#D9534F;border:2px solid #FFFFFF}
  // Button END
 
+//Text cases
  .text-cp { text-transform: capitalize;}
  .text-dn { text-transform: lowercase;}
  .text-up { text-transform: uppercase;}
  .text-fn {
     text-transform: lowercase;
  }
+//Thumbnails no border
+ .thumbnail {
+    border: 0 none;
+    box-shadow: none;
+}

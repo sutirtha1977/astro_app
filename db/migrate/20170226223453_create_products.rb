@@ -4,6 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
     	t.string 	:name, null: false
     	t.text 		:description
     	t.string 	:category
+    	t.string	:icon_path
     	t.boolean 	:visible, default: false
       	t.timestamps
     end

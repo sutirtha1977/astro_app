@@ -56,7 +56,7 @@ private
 
   def listing_params
     params.require(:listing).permit(:product_id, :name, 
-              :short_desc, :long_desc, :visible, :orig_price, :curr_price)
+              :short_desc, :long_desc, :visible, :orig_price, :curr_price, :image)
   end
 
   def find_product

@@ -1,31 +1,33 @@
 <div class="modal-body">
     <ul class="errors"></ul>
     <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+        <div class="col-sm-6" style="padding-bottom: 10px;">
             <%= f.text_field(:name, class: 'text-cp form-control', placeholder: 'Listing Name') %>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+        <div class="col-sm-6 text-danger" style="padding-bottom: 10px;">
+            <%= f.select(:visible, [ ["Visible", true], ["Invisible", false]], {}, {class: 'form-control'}) %>
+        </div>
+        <div class="col-sm-12" style="padding-bottom: 10px;">
             <%= f.text_field(:short_desc, class: 'form-control', placeholder: 'Enter Brief Description') %>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+        <div class="col-sm-12" style="padding-bottom: 10px;">
             <%= f.text_area(:long_desc, class: 'form-control', rows:'6',  placeholder: 'Describe in details...') %>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 text-center text-danger" style="padding-bottom: 10px;">
-            <%= f.label "Original Price", class:"control-label" %>
+        <div class="col-sm-6 text-center text-danger" style="padding-bottom: 10px;">
+
             <div class="input-group">
-                <span class="input-group-addon">INR</span>
+                <span class="input-group-addon">Original Price (INR)</span>
                 <%= f.number_field(:orig_price, class: 'form-control') %> 
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 text-center text-danger" style="padding-bottom: 10px;">
-            <%= f.label "Current Price", class:"control-label" %>
+        <div class="col-sm-6 text-center text-danger" style="padding-bottom: 10px;">
             <div class="input-group">
-                <span class="input-group-addon">INR</span>
+                <span class="input-group-addon">Current Price (INR)</span>
                 <%= f.number_field(:curr_price, class: 'form-control') %>
             </div> 
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 text-center text-danger" style="padding-bottom: 10px;">
-            <%= f.check_box(:visible, class: 'checkbox-inline') %> Visible
+        <div class="col-sm-12" style="padding-bottom: 10px;">
+            <%= f.file_field(:image, class: 'form-control') %>
         </div>
     </div>
 </div>

@@ -19,4 +19,5 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require admin_func
+//= require jquery.remotipart
 

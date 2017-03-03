@@ -12,4 +12,5 @@ class Product < ApplicationRecord
 					 :uniqueness => { :case_sensitive => false }
 	validates_presence_of :description
 	validates_presence_of :category
+	validates_presence_of :icon_path
 end

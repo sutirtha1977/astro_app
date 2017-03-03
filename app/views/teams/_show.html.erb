@@ -12,16 +12,27 @@
           <div class="panel-body">
               <!-- Nav tabs -->
               <ul class="nav nav-pills">
-                  <li class="active"><a href="#desc-pills" data-toggle="tab">Description</a>
+                  <li class="active">
+                    <a href="#photo-pills" data-toggle="tab">Photo</a>
                   </li>
-                  <li><a href="#con-pills" data-toggle="tab">Contact</a>
+                  <li>
+                    <a href="#desc-pills" data-toggle="tab">Description</a>
                   </li>
-                  <li><a href="#oth-pills" data-toggle="tab">Social</a>
+                  <li>
+                    <a href="#con-pills" data-toggle="tab">Contact</a>
+                  </li>
+                  <li>
+                    <a href="#oth-pills" data-toggle="tab">Social</a>
                   </li>
               </ul>
               <!-- Tab panes -->
               <div class="tab-content">
-                  <div class="tab-pane fade in active" id="desc-pills">
+                  <div class="tab-pane fade in active" id="photo-pills">
+                    <div class="well text-center">
+                      <%= avatar_for(@team) %>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="desc-pills">
                     <div class="well">
                       <p><%= @team.description %></p>
                     </div>

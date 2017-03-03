@@ -1,22 +1,38 @@
 <%= form_for @product, remote: true, html: { style: "display:inline;" } do |f| %>
 <%= error_messages_for(f.object) %>
+<% @images = Dir.glob(File.join(Rails.root, 'app', 'assets', 'images', 'icons', '*.svg')) %>
+
 <div class="modal-body">
     <ul class="errors"></ul>
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+        <div class="col-sm-6" style="padding-bottom: 10px;">
             <%= f.text_field(:name, class: 'text-cp form-control', placeholder: 'Category Name') %>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-            <%= f.radio_button(:category, 'Service', class: 'radio-inline') %> Service
-            <%= f.radio_button(:category, 'Product', class: 'radio-inline') %> Product
+        <div class="col-sm-3" style="padding-bottom: 10px;">
+            <%= f.select(:category, [ 'Service', 'Product'], {}, {class: 'form-control'}) %>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+        <div class="col-lg-3 col-md-3 col-sm-3 text-danger" style="padding-bottom: 10px;">
+            <%= f.select(:visible, [ ["Visible", true], ["Invisible", false]], {}, {class: 'form-control'}) %>
+        </div>
+        <div class="col-sm-12" style="padding-bottom: 10px;">
             <%= f.text_area(:description, class: 'form-control', rows:'6', placeholder: 'Describe in detail....') %>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 text-center text-danger" style="padding-bottom: 10px;">
-            <%= f.check_box(:visible, class: 'checkbox-inline') %> Visible
+        <div class="col-sm-12" style="padding-bottom: 10px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <ul>
+                        <% @images.each do |image| %>
+                        <% @path = "icons/" + image.split('/').last %>
+                        <li class="photogrid col-xs-2 pull-left">
+                            <%= f.radio_button(:icon_path, @path, class: 'radio-inline') %>
+                            <%= image_tag(@path, size: "20x20") %>
+                        </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
+    </div>       
 </div>
 <div class="modal-footer">
     <%= link_to "Close", "#", class: "btn btn-secondary", data: {dismiss: "modal"} %>
@@ -24,3 +40,6 @@
 </div>
 
 <% end %>
+
+
+

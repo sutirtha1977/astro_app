@@ -33,12 +33,11 @@ class TeamsController < ApplicationController
   def update
     @team = Team.find(params[:id])
     if @team.update_attributes(team_params)
-      flash[:notice] = 'Member updated successfully.'
+      flash[:notice] = "Member updated successfully."
       redirect_to(teams_path)
     else
       render "edit.js.erb"
-    end  
-
+    end 
   end
 
   def delete
@@ -65,7 +64,9 @@ class TeamsController < ApplicationController
       :google,
       :facebook,
       :twitter,
-      :linkedin
+      :linkedin,
+      :avatar
     )
   end
+
 end
