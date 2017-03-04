@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
-      flash[:notice] = "Category updated successfully."
+      flash[:notice] = "Category '#{@product.name}' updated successfully."
       redirect_to(products_path)
     else
       render "edit.js.erb"

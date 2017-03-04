@@ -34,7 +34,7 @@ class ListingsController < ApplicationController
   def update
     @listing = Listing.find(params[:id])
     if @listing.update_attributes(listing_params)
-      flash[:notice] = "Listing updated successfully."
+      flash[:notice] = "Listing '#{@listing.name}' updated successfully."
       redirect_to(listings_path(:product_id => @product.id))
     else
       render "edit.js.erb"
