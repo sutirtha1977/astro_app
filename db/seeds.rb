@@ -59,7 +59,8 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	category: "Service" ,
+	category: "SERVICE" ,
+	icon_path: "icons/icon1.svg",
 	visible: true })
 
 product.listings.create({
@@ -263,7 +264,8 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:category => "Product" ,
+	:category => "PRODUCT" ,
+	icon_path: "icons/icon2.svg",
 	:visible => true)
 
 product.listings.create({
@@ -491,7 +493,8 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:category => "Service" ,
+	:category => "SERVICE" ,
+	icon_path: "icons/icon3.svg",
 	:visible => true)
 
 product.listings.create({
@@ -683,7 +686,8 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:category => "Service" ,
+	:category => "SERVICE" ,
+	icon_path: "icons/icon4.svg",
 	:visible => true)
 
 product.listings.create({
@@ -817,7 +821,8 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 
-	:category => "Service" ,
+	:category => "SERVICE" ,
+	icon_path: "icons/icon5.svg",
 	:visible => true)
 product.listings.create({
 	name: "Vastu For Business",

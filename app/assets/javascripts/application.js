@@ -17,3 +17,5 @@
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require bootstrap
 //= require turbolinks
+//= require jquery.turbolinks
+//= require app_func

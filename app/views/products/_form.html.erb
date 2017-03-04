@@ -9,7 +9,7 @@
             <%= f.text_field(:name, class: 'text-cp form-control', placeholder: 'Category Name') %>
         </div>
         <div class="col-sm-3" style="padding-bottom: 10px;">
-            <%= f.select(:category, [ 'Service', 'Product'], {}, {class: 'form-control'}) %>
+            <%= f.select(:category, [['Service', 'SERVICE'],['Product','PRODUCT']], {}, {class: 'form-control'}) %>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 text-danger" style="padding-bottom: 10px;">
             <%= f.select(:visible, [ ["Visible", true], ["Invisible", false]], {}, {class: 'form-control'}) %>

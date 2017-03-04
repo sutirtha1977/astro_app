@@ -1,6 +1,7 @@
 class AccessController < ApplicationController
   
   layout :login_loggedin
+  before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
   
   def menu
   	@adminuser_count = AdminUser.count

@@ -6,6 +6,9 @@ class Product < ApplicationRecord
   	scope :sorted, lambda { order("name ASC") }
   	scope :newest_first, lambda { order("created_at DESC") }
   	scope :search, lambda {|query| where(["name LIKE ?", "%#{query}%"]) }
+  	scope :category_group, lambda {|ctype| where(:category => ctype) }
+
+  	
 
   	validates :name, :presence => true,
 					 :length => { :maximum => 255 },
