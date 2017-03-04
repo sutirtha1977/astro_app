@@ -28,6 +28,16 @@ $(function() {
                 { "orderable": false }
             ]
         });
+        //dataTables-listing responsive
+        $('#dataTables-listing').DataTable({
+            responsive: true,
+            "columns": [
+                null,
+                null,
+                null,
+                { "orderable": false }
+            ]
+        });
         //dataTables-adminuser responsive
         $('#dataTables-adminuser').DataTable({
             responsive: true,

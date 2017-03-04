@@ -1,58 +1,38 @@
-<% @listings.each.with_index do |listing, index| %>
-<div class="panel-group" id="accordion-list">
-  <div class="panel panel-<%= index.odd? ? 'default' : 'primary' %>">
-    <div class="panel-heading" data-toggle= "tooltip"  data-placement= "bottom" title = "Click to view listing details">
-        <h3 class="panel-title">
-            <a data-toggle="collapse" 
-              data-parent="#accordion-list"  
-              href="#collapse_<%= listing.id %>"><%= listing.name %>
-            </a>
-        </h3>
-    </div>
-    <% if index === 0 %>
-      <div id="collapse_<%= listing.id %>" class="panel-collapse collapse in">
-    <% else %>
-      <div id="collapse_<%= listing.id %>" class="panel-collapse collapse">
-    <% end %>            
-        <div class="panel-body">
-          <h5>Description Header:</h5>
-          <p class="text-muted"><%= listing.short_desc %></p> 
-          <h5>Description Body:</h5>
-          <p class="text-muted"><%= listing.long_desc %></p> 
-          <h5>Original Price:</h5>
-          <p class="text-danger"><%= number_to_currency(listing.orig_price, 
-              :unit => "INR", :format => "%u %n") %></p>
-          <h5>Current Price:</h5>
-          <p class="text-danger"><%= number_to_currency(listing.curr_price, 
-              :unit => "INR", :format => "%u %n") %></p>
-          <p>
-            <span><%= image_tag listing.image.url(:thumb) if listing.image? %></span>
-            <span class="pull-right">
-              <%= link_to(edit_listing_path(listing, :product_id => @product.id), 
-                  :remote => true, 
-                  "data-toggle": "tooltip", "data-placement": "top", :title => "Edit Listing",
-                  :class => "btn btn-success btn-circle") do %>
-                  <i class="fa fa-edit fa-fw" aria-hidden="true"></i> 
-              <% end %>  
-              <%= link_to(delete_listing_path(listing,:product_id => @product.id), 
-                  :remote => true, 
-                  "data-toggle": "tooltip", "data-placement": "top", :title => "Delete Listing",
-                  :class => "btn btn-danger btn-circle") do %>
-                  <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> 
-              <% end %> 
-              <% if listing.visible %>
-                <i class="fa fa-eye fa-lg" 
-                data-toggle= "tooltip"  data-placement= "top" title = "visible" 
-                aria-hidden="true"></i>
-              <% else %>
-                <i class="fa fa-eye-slash fa-lg" 
-                data-toggle= "tooltip"  data-placement= "top" title = "visible" 
-                aria-hidden="true"></i>
-              <% end %>  
-            </span>  
-          </p>
-        </div>
-    </div>
-  </div>
-</div>
+<% @listings.each do |listing| %>
+<tr>
+     <td class="text-center">
+      <%= listing.name %>
+      <% if listing.visible %>
+          <i class="fa fa-eye fa-fw" aria-hidden="true"></i>
+      <% else %>
+          <i class="fa fa-eye-slash fa-fw" aria-hidden="true"></i>
+      <% end %> 
+    </td>  
+    <td class="text-center">
+      <%= number_to_currency(listing.orig_price, 
+        :unit => "INR", :format => "%u %n") %>      
+    </td>
+    <td class="text-center">
+      <%= number_to_currency(listing.curr_price, 
+        :unit => "INR", :format => "%u %n") %>    
+    </td>
+    <td class="text-center">
+      <%= link_to(listing_path(listing,:product_id => @product.id), 
+          :remote => true, 
+          :class => "btn btn-info btn-circle") do %>
+          <i class="fa fa-flag fa-fw" aria-hidden="true"></i> 
+      <% end %>  
+      <%= link_to(edit_listing_path(listing, :product_id => @product.id), 
+          :remote => true, 
+          :class => "btn btn-success btn-circle") do %>
+          <i class="fa fa-edit fa-fw" aria-hidden="true"></i> 
+      <% end %>  
+      <%= link_to(delete_listing_path(listing,:product_id => @product.id), 
+          :remote => true, 
+          :class => "btn btn-danger btn-circle") do %>
+          <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> 
+      <% end %>       
+    </td>
+</tr>
 <% end %>
+
