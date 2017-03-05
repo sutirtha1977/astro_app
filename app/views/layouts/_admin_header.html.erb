@@ -1,68 +1,47 @@
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <%= link_to("Site Administration", admin_path, 
-          :class => "navbar-brand") %>
-    </div> <!-- /.navbar-header -->    
-    <ul class="nav navbar-top-links navbar-right hidden-xs">  
-        <li class="dropdown"> <!-- /.dropdown -->
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <%= session[:username].upcase_first %> <i class="fa fa-user fa-lg"></i> <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-user">
-                <li>
-                    <%= link_to access_logout_path do %>
-                        <i class="fa fa-sign-out fa-fw"></i> Logout
-                    <% end %>
-                </li>
-            </ul> <!-- /.dropdown-user -->            
-        </li> <!-- /.dropdown -->        
-    </ul> <!-- /.navbar-top-links -->    
-    <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-            <ul class="nav" id="side-menu">
-                <li class="sidebar-search">
-                    <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                        <button class="btn btn-default disabled" type="button">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </span>
-                    </div> <!-- /input-group -->   
-                </li>
-                <li>
-                    <%= link_to admin_path do %>
-                        <i class="fa fa-cogs fa-fw"></i> Dashboard
-                    <% end %>
-                </li>
-                <li>
-                    <%= link_to admin_users_path do %>
-                        <i class="fa fa-group fa-fw"></i> Manage Admin Users
-                    <% end %>
-                </li>
-                <li>
-                    <%= link_to teams_path do %>
-                        <i class="fa fa-support fa-fw"></i> Manage Team
-                    <% end %>               
-                </li>
-                <li>
-                    <%= link_to products_path do %>
-                        <i class="fa fa-th-list fa-fw"></i> Manage Categories
-                    <% end %>               
-                </li>
-                <li>
-                    <%= link_to access_logout_path do %>
-                        <i class="fa fa-sign-out fa-fw"></i> Logout
-                    <% end %>               
-                </li>
-            </ul>
-        </div> <!-- /.sidebar-collapse -->        
-    </div> <!-- /.navbar-static-side -->    
-</nav>
+<header class="header dark-bg">
+    <div class="toggle-nav">
+        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+    </div>
+
+    <!--logo start-->
+    <%= link_to(admin_path, class: "logo" ) do %>
+        Site <span class="lite">Administration</span>
+    <% end %>
+    <!--logo end-->
+
+    <div class="nav search-row" id="top_menu">
+        <!--  search form start -->
+        <ul class="nav top-menu">                    
+            <li>
+                <form class="navbar-form">
+                    <input class="form-control" placeholder="Search" type="text" disabled>
+                </form>
+            </li>                    
+        </ul>
+        <!--  search form end -->                
+    </div>
+
+    <div class="top-nav notification-row">                
+        <!-- notificatoin dropdown start-->
+        <ul class="nav pull-right top-menu  hidden-xs">
+            <!-- user login dropdown start-->
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <span class="username"><%= session[:username].upcase_first %></span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu extended logout">
+                    <div class="log-arrow-up"></div>
+                    <li class="eborder-top">
+                        <%= link_to access_logout_path do %>
+                            <i class="fa fa-sign-out fa-fw"></i> Logout
+                        <% end %>
+                    </li>
+                </ul>
+            </li>
+            <!-- user login dropdown end -->
+        </ul>
+        <!-- notificatoin dropdown end-->
+    </div>
+</header>      
+

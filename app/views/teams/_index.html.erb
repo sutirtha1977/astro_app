@@ -2,8 +2,8 @@
 <tr>
     <td><%= team.first_name %></td>
     <td><%= team.last_name %></td>
-    <td class="text-center"><%= mail_to(team.email) %></td>
-    <td class="text-center">
+    <td><%= mail_to(team.email) %></td>
+    <td>
         <%= link_to(team_path(team), 
             :remote => true, 
             :class => "btn btn-info btn-circle") do %>

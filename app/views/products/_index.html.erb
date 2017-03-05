@@ -1,20 +1,26 @@
 <% @products.each do |product| %>
-<tr>
-     <td class="text-center">
+<tr> 
+    <td>
+        <%= product.id %> <%= product.name %>
+        <% if product.visible %>
+            <%= link_to(toggle_visible_product_path(product), 
+                :remote => true) do %>
+                <i class="fa fa-eye fa-fw" aria-hidden="true"></i>
+            <% end %>  
+        <% else %>
+            <%= link_to(toggle_visible_product_path(product), 
+                :remote => true) do %>
+                <i class="fa fa-eye-slash fa-fw" aria-hidden="true"></i>
+            <% end %>      
+        <% end %>       
+    </td>
+    <td>
       <%= product.category.capitalize %>
     </td>  
-    <td class="text-center">
-        <%= product.name %>
-        <% if product.visible %>
-            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>
-        <% else %>
-            <i class="fa fa-eye-slash fa-fw" aria-hidden="true"></i>
-        <% end %>        
-    </td>
     <td>
       <%= truncate(product.description, :length => 30) %>
     </td>
-    <td class="text-center">
+    <td>
         <%= link_to(product_path(product), 
             :remote => true, 
             :class => "btn btn-info btn-circle") do %>
@@ -31,7 +37,7 @@
             <i class="fa fa-trash-o fa-fw" aria-hidden="true"></i> 
         <% end %>        
     </td>
-    <td class="text-center">
+    <td>
         <%= link_to(listings_path(:product_id => product.id), 
             :class => "btn btn-primary btn-circle") do %>
             <i class="fa fa-list fa-fw"></i>

@@ -39,6 +39,14 @@ class ProductsController < ApplicationController
     end
   end
 
+  def toggle_visible
+    @product = Product.find(params[:id])
+    @product.toggle(:visible)
+    @product.save
+    flash[:notice] = "Category visibility toggled successfully."
+    redirect_to(products_path)
+  end
+
   def delete
     @product = Product.find(params[:id])
   end
