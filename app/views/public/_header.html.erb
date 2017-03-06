@@ -1,0 +1,52 @@
+<nav class="navbar navbar-default navbar-fixed-top" id="nav">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Astro Site</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <% if @services.count > 0 %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% @services.each do |service| %>
+            <li><a href="#"><%= service.name %></a></li>
+            <% end %>
+          </ul>
+        </li>
+        <% end %>
+        <% if @products.count > 0 %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% @products.each do |product| %>
+            <li><a href="#"><%= product.name %></a></li>
+            <% end %>
+          </ul>
+        </li>
+        <% end %>
+        <li><a href="#team">Our Team</a></li>
+<!--         <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li> -->
+      </ul>
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.container -->
+</nav><!-- /.navbar -->
+
+<article class="fullheight">
+  <div class="hgroup">
+    <h2>ॐ हौं जूं स: ॐ भूर्भुवः स्वः
+त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम्।
+उर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय माऽमृतात्।।
+ॐ स्वः भुवः भूः ॐ सः जूं हौं ॐ</h2>
+    <p><a href="#welcome"><%= image_tag("arrow.png", alt: "down arrow") %></a></p>
+  </div>
+</article>

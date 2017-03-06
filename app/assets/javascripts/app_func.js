@@ -1,17 +1,18 @@
 //Loads the correct sidebar on window load,
 //collapses the sidebar on window resize.
 // Sets the min-height of #page-wrapper to window size
-$(function() {
+$(function() {  
 
-    //make menus drop automatically
-    $('ul.nav li.dropdown').hover(function() {
-        $('.dropdown-menu', this).fadeIn();
-    }, function() {
-        $('.dropdown-menu', this).fadeOut('fast');
-    });//hover
-    
-    
+    var topoffset = 51; 
+
     $(document).on('turbolinks:load', function() {
+        //make menus drop automatically
+        $('ul.nav li.dropdown').hover(function() {
+            $('.dropdown-menu', this).fadeIn();
+        }, function() {
+            $('.dropdown-menu', this).fadeOut('fast');
+        });//hover
+
         //tool tip
         $('[data-toggle="tooltip"]').tooltip();
 
@@ -26,6 +27,38 @@ $(function() {
             $('.fullheight').css('height', wheight);
         }) //on resize
         //fullheight END
+
+      //highlight navigation
+      $(window).scroll(function() {
+        var windowpos = $(window).scrollTop() + topoffset;
+        $('nav li').removeClass('active');
+
+        if (windowpos > $('#intro').offset().top) {
+          $('nav li').removeClass('active');
+          $('a[href$="/"]').parent().addClass('active');
+        } //windowpos
+
+        if (windowpos > $('#about').offset().top) {
+          $('nav li').removeClass('active');
+          $('a[href$="#about"]').parent().addClass('active');
+        } //windowpos
+
+        if (windowpos > $('#service').offset().top) {
+          $('nav li').removeClass('active');
+          $('a[href$="#service"]').parent().addClass('active');
+        } //windowpos
+
+        if (windowpos > $('#product').offset().top) {
+          $('nav li').removeClass('active');
+          $('a[href$="#product"]').parent().addClass('active');
+        } //windowpos
+
+        if (windowpos > $('#team').offset().top) {
+          $('nav li').removeClass('active');
+          $('a[href$="#team"]').parent().addClass('active');
+        } //windowpos
+
+      }); //window scroll
 
     });
 
@@ -63,6 +96,7 @@ $(function() {
             break;
         }
     }
+
 
 
 });

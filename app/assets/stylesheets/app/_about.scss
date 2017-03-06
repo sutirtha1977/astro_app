@@ -1,0 +1,91 @@
+#about { 
+  @include background-image(linear-gradient(top, $blue, $light));
+
+  article {
+    padding-top: 51px;
+    text-align: center;
+    .title-one {
+      color: $light;
+      display: inline-block;
+      font-size: 32px;
+      font-weight: 600;
+      padding-bottom:10px;
+      text-align: center;
+      text-transform: uppercase;
+      position:relative
+    }
+    .about-para {
+      font-size: 1.2em;
+    }
+    .title-one:after {
+      color: #fc7700;
+      content: "||";
+      position: absolute;
+      right: -40px;
+      top: -2px;
+    }
+
+    .title-one:before {
+      color: #fc7700;
+      content: "||";
+      left: -40px;
+      position: absolute;
+      top: 0;
+    }
+    .nav.nav-pills > li > a {
+        position: relative;
+        display: block;
+        background-color: $light;
+        color: $dark;
+        padding: 10px;
+        border-bottom: 3px solid $orange;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        font-weight: $normal;
+    }
+    .nav.nav-pills > li > a small {
+        text-transform: capitalize;
+        font-style: italic;
+    }
+    .nav.nav-pills > li > a:hover {
+        color: #fff;
+        background-color: $headColor;
+        padding: 20px;
+        border-bottom: 3px solid $red;      
+    }
+    .nav-pills > li.active > a,
+    .nav-pills > li.active > a:hover,
+    .nav-pills > li.active > a:focus {
+        color: #fff;
+        background-color: lighten($blue, 10);
+        padding: 20px;
+        border-bottom: 3px solid $red;
+    }
+    .nav-pills > li > a { border-radius: 10px }
+    ul.features li span.icon {
+        // font-size: 35px;
+        vertical-align: middle;
+        margin-right: 20px;
+        float: right;
+        clear: both;
+        margin-top: 5px;
+    }
+
+    .tab-pane {
+        h4 {
+          color: $blue;
+          font-size: 2em;
+        }
+        p {
+          // font-size: 1.2em;  
+        }
+    }
+  } //article
+}
+
+
+
+
+
+
+

@@ -1,12 +1,35 @@
-<header>
-  <%= render 'app_header' %>
-</header>
-<div class="container">
+<header id="intro">
+  <%= render 'header' %>
+</header> <!-- header -->
+<main id="wrapper">
+	<div class="scene" id="about">
+		<article class="content">
+			<%= render 'about' %>
+		</article> <!-- about body -->
+	</div> <!-- about -->
 
+	<div class="scene" id="service">
+		<article class="content">
+			<%= render 'service' %>
+		</article> <!-- service body -->
+	</div> <!-- service -->
 
-	<hr>
-	<footer>
-		<%= render 'app_footer' %>
-	</footer>
-</div> <!--/.container-->
+	<div class="scene" id="product">
+		<article class="content">
+			<%= render 'product' %>
+		</article> <!-- product body -->
+	</div> <!-- product -->
+
+	<div class="scene" id="team">
+		<article class="content">
+			<%= render 'team' %>
+		</article> <!-- team body -->
+	</div> <!-- team -->
+
+</main> <!-- main -->
+<hr>
+<footer>
+	<%= render 'footer' %>
+</footer> <!-- footer -->
+
 

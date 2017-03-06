@@ -9,8 +9,8 @@
       Are you sure you wish to delete <b><%= @admin_user.name %></b>?
     </div>
     <div class="modal-footer">
-      <%= link_to "Yes, Delete This Admin User", admin_user_path(@admin_user), method: :delete, remote: true, class: "btn btn-bordered-danger" %>
-      <%= link_to "No, Please Don't", "#", class: "btn btn-bordered-success", data: { dismiss: "modal" } %>
+      <%= link_to "Yes, Delete This Admin User", admin_user_path(@admin_user), method: :delete, remote: true, class: "btn btn-danger" %>
+      <%= link_to "No, Please Don't", "#", class: "btn btn-success", data: { dismiss: "modal" } %>
     </div>
   </div>
 </div>

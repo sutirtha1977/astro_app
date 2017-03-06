@@ -1,3 +1,7 @@
+@import "admin/admin_base";
+@import "admin/admin_style_responsive";
+
+
 //DataTable Start
 table.dataTable thead .sorting,
 table.dataTable thead .sorting_asc,
@@ -38,5 +42,47 @@ table.dataTable thead .sorting:after {
 .btn-bordered-warning:hover{color:#FFFFFF;background:#F0AD4E;border:2px solid #FFFFFF}
 .btn-bordered-danger{color:#D9534F;background:#FFFFFF;border:2px solid #D9534F}
 .btn-bordered-danger:hover{color:#FFFFFF;background:#D9534F;border:2px solid #FFFFFF}
+
+
+.btn-outline {
+  color: inherit;
+  background-color: transparent;
+  transition: all .5s;
+}
+.btn-primary.btn-outline {
+  color: #428bca;
+}
+.btn-success.btn-outline {
+  color: #5cb85c;
+}
+.btn-info.btn-outline {
+  color: #5bc0de;
+}
+.btn-warning.btn-outline {
+  color: #f0ad4e;
+}
+.btn-danger.btn-outline {
+  color: #d9534f;
+}
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+  color: white;
+}
+
  // Button END
 
+//Text cases
+ .text-cp { text-transform: capitalize;}
+ .text-dn { text-transform: lowercase;}
+ .text-up { text-transform: uppercase;}
+ .text-fn {
+    text-transform: lowercase;
+ }
+//Thumbnails no border
+ .thumbnail {
+    border: 0 none;
+    box-shadow: none;
+}
