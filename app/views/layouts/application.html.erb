@@ -10,6 +10,13 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
+    <header id="intro">
+      <%= render 'layouts/app/header' %>
+    </header> <!-- header -->
     <%= yield %>
+    <hr>
+    <footer>
+      <%= render 'layouts/app/footer' %>
+    </footer> <!-- footer -->
   </body>
 </html>

@@ -3,7 +3,7 @@
 // Sets the min-height of #page-wrapper to window size
 $(function() {  
 
-    var topoffset = 51; 
+    var topoffset = 52; 
 
     $(document).on('turbolinks:load', function() {
         //make menus drop automatically

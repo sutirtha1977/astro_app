@@ -4,6 +4,6 @@ $("ul.errors").html("")
     $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
   <% end %>
 <% else %>
-  $(".admin-index").html("<%= escape_javascript(render 'index') %>")
+  $(".admin-index").html("<%= j (render 'index') %>")
   $("#admin-modal").modal("hide")
 <% end %>

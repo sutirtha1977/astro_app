@@ -2,7 +2,7 @@ $bgDefault      : #063642;
 $bgHighlight    : #df4848;
 $colDefault     : #ecf0f1;
 $colHighlight   : #efc94c;
-$dropDown       : false;
+$dropDown       : true;
 .navbar-default {
   background-color: $bgDefault;
   border-color: $bgHighlight;
@@ -14,6 +14,7 @@ $dropDown       : false;
     color: $colDefault; }
   .navbar-nav {
     > li {
+      padding-left: 10px;
       > a {
         color: $colDefault;
         &:hover,  &:focus {
