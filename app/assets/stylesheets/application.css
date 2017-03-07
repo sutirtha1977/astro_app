@@ -15,5 +15,6 @@
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  *= require font-awesome
  *= require bootstrap-social
+ *= require devise_bootstrap_views
  *= require app_styles
  */

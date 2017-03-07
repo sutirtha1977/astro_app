@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
+gem 'devise-bootstrap-views'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -35,6 +36,7 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'remotipart', '~> 1.2'
 gem 'seed_dumper', '~> 0.1.3'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
